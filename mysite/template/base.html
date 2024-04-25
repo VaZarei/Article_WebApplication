@@ -1,0 +1,24 @@
+<div>
+    <h1>Header Content</h1>
+    <hr>
+
+    <h2> Here is Details of Site Menu: </h2>
+    <li><a href="/admin/">Admin</a></li>
+    <li><a href="{% url 'home_URL' %}">Home</a></li>
+    <li><a href="{% url 'articles_ListView_URL' %}">Articles</a></li>
+
+
+</div>
+
+{% block content %}
+
+
+
+{% endblock content %}
+
+<div>
+    <hr>
+    <h1>Footer Content</h1>
+    <h3>Call Number: <strong>+44-123-456-789</strong></h3>
+
+</div>
