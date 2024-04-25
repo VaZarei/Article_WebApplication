@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{%block content%}
+
+<h1>Create New Article</h1>
+<hr>
+
+<form action="", method="POST">
+
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Save">
+    <a href="{{get_absolute_url}}"></a>
+
+
+</form>
+
+
+{%endblock content%}

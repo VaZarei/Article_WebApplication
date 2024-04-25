@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+
+
+{% block content %}
+
+ <h1>Edit Article : <strong>{{articles.Title}}</strong></h1>
+ <hr>
+ 
+ <form action="" method="POST">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="Update">
+
+ </form>
+
+{% endblock content %}

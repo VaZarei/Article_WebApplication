@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -10,4 +11,8 @@ class ArticleDB(models.Model):
 
     def __str__(self):
         return self.Title
+    
+    def get_absolute_url(self):
+        return reverse("article_DetailView_URL", kwargs={"pk": self.pk})
+    
     

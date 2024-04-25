@@ -10,6 +10,9 @@
 {{articles.Body}}
 <hr>
 {{articles.Auther}}
+<hr>
+<a href="{% url 'ArticleUpdateView_URL' articles.id %}">Update</a>
+<a href="{% url 'ArticleDeleteView_URL' articles.id %}">Delete</a>
 
 
 
