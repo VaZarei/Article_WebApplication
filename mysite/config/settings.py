@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'article',
+    'accounts',
 
 ]
 
@@ -131,3 +132,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/statics/'
 STATICSFILES_DIRS = [str(BASE_DIR.joinpath('statics'))]
+
+
+# Account Redirect
+
+LOGIN_REDIRECT_URL  = "home_URL"
+LOGOUT_REDIRECT_URL = "login"
+
+
+
+EMAIL_BACKEND =  "django.core.mail.backends.console.EmailBackend"

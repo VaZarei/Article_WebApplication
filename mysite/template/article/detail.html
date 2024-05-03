@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 
 
-
-
 {% block content %}
 
 <h1>Detail of Article <strong> {{articles.Title}} </strong></h1>
@@ -14,6 +12,18 @@
 <a href="{% url 'ArticleUpdateView_URL' articles.id %}">Update</a>
 <a href="{% url 'ArticleDeleteView_URL' articles.id %}">Delete</a>
 
+<hr>
+<p>Comments For Article : </p>
+<ul>
+    {% for comment in object.comments.all %}
+        <li><strong>{{comment.writer}}</strong> | {{comment.comment}}</li>
+    {% endfor %}
+</ul>
 
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="comment">
+</form>
 
 {% endblock content %}

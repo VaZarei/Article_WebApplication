@@ -3,13 +3,26 @@
 
 {% block content %}
 
-    <h2>Article List: </h2>
 
-    {% for article in articles %}
-        <li><a href="{{article.get_absolute_url}}">{{article.Title}}</a></li>
+<div class="container">
+    <!-- Content here -->
+
+ 
+
+        {% for article in articles %}
+            <li><a href="{{article.get_absolute_url}}">{{article.Title}}</a></li>
+            <p><h6>Author: {{article.Auther}}</h6></p>
+
+            <li>
+            <a href="{% url 'ArticleUpdateView_URL' article.id %}">Update</a>
+            <a href="">|</a>
+            <a href="{% url 'ArticleDeleteView_URL' article.id %}">Delete</a>
+            </li>
+            <hr>
         
-    {% endfor %}
+        {% endfor %}
 
 
+</div>
 
 {% endblock content %}
